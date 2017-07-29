@@ -2,9 +2,7 @@ package Scan;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,7 +16,7 @@ public class ScanFile2 {
 
 	private static ExecutorService threadExecutor = Executors.newFixedThreadPool(20);
 
-	private static String filePath = "F:\\file2\\";
+	private static String filePath = "F:\\file\\";
 	private static int existNum; // 存在文件数量
 	private static int inexistenceNum; // 不存在文件数量
 	public static volatile int existNumThread; // 存在文件数量
@@ -30,10 +28,10 @@ public class ScanFile2 {
 	 * @throws IOException
 	 */
 	private static void createFile() throws IOException {
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10; i++) {
 			File dir = new File(filePath + i+"\\");
 			dir.mkdir();
-			for (int j = 0; j < 10000; j++) {
+			for (int j = 0; j < 100; j++) {
 				File file = new File(filePath + i + "\\" + j);
 				file.createNewFile();
 			}
@@ -61,7 +59,7 @@ public class ScanFile2 {
 	}
 
 	public static void main(String[] args) throws IOException {
-//		 createFile();
+		 createFile();
 
 		Date date = new Date();
 		scan();

@@ -20,7 +20,7 @@ public class ScanFileThread2 extends Thread {
 				ScanFile.inexistenceNumThread++;
 			}
 		}
-		
+		return ;
 	}
 
 }

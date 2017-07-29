@@ -18,6 +18,7 @@ public class ScanFileThread extends Thread {
 		} else {
 			ScanFile.inexistenceNumThread++;
 		}
+		return ;
 	}
 
 }
